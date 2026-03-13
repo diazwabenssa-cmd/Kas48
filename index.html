@@ -974,5 +974,26 @@ document.getElementById('addModal').addEventListener('click', (e) => {
     if (e.target === e.currentTarget) closeModal();
 });
 </script>
+    <script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getDatabase, ref, set, push } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDDA0TI7PGnjKr6-YeGDLHmyN_NjdvnBHU",
+  authDomain: "osis-finance-kas48.firebaseapp.com",
+  databaseURL: "https://osis-finance-kas48-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "osis-finance-kas48",
+  storageBucket: "osis-finance-kas48.firebasestorage.app",
+  messagingSenderId: "367476153777",
+  appId: "1:367476153777:web:c62e9f68fc4108dd53f190"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
+console.log("Firebase tersambung!");
+    </script>
 </body>
 </html>
+
+
