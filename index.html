@@ -679,12 +679,14 @@
 
         // Transaction Management
         function getTransactions() {
-            const data = localStorage.getItem(DB.TRANSACTIONS);
-            return data ? JSON.parse(data) : [];
+        onValue(ref(db, "transactions"), (snapshot) => {
+    const data = snapshot.val();
+    console.log(data);
+});
         }
 
         function saveTransactions(transactions) {
-            localStorage.setItem(DB.TRANSACTIONS, JSON.stringify(transactions));
+            push(ref(db, "transactions"), transactions);
         }
 
         function openModal() {
@@ -999,6 +1001,7 @@ set(ref(db, 'test'), {
     </script>
 </body>
 </html>
+
 
 
 
